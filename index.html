@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Special Message for My Love</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div id="lock-screen" class="screen">
+  <div class="lock-box">
+    <h1>🔒 Unlock Our World </h1>
+    <p>Enter the key to reveal a message written only for you.</p>
+    <input type="text" id="passkey" placeholder="Our Anniversary Date (MM/DD)">
+    <button onclick="checkKey()">Unlock</button>
+    <p id="error-message" class="error-text"></p>
+  </div>
+</div>
+
+<div id="unlocked-content" class="screen hidden">
+
+  <nav>
+    <button onclick="showSection('letter')">💌 The Letter</button>
+    <button onclick="showSection('quiz')">❤️ The Couple Quiz</button>
+    <button onclick="showSection('puzzle')">🖼️ Photo Puzzle</button>
+  </nav>
+
+  <div id="letter-section" class="content-section">
+    <div class="letter-page">
+      <h2 class="title">To My Baby,</h2>
+      <hr>
+
+      <p class="body-text">
+        Meri Pyari Anshika... You are not just my love, you are an ansh of my life... You complete my duniya. Har pal spent with you is a beautiful yaad which I always cherish. Your presence brings a sukoon that nothing else can. Thank you for making my life so beautiful. Now, are you ready for a little fun?
+      </p>
+
+      <div class="photo-gallery-container">
+        <div class="photo-trigger" onmouseover="revealPhoto(1)" onmouseout="hidePhoto()">
+          <span>First Date 🌹</span>
+        </div>
+        <div class="photo-trigger" onmouseover="revealPhoto(2)" onmouseout="hidePhoto()">
+          <span>Our Trip ✈️</span>
+        </div>
+        <div class="photo-trigger" onmouseover="revealPhoto(3)" onmouseout="hidePhoto()">
+          <span>Everyday Love 🏡</span>
+        </div>
+
+        <img id="dynamic-photo-display" src="" alt="A beautiful shared memory" class="hidden-photo">
+      </div>
+
+      <p class="signature-text">
+        Thank you for every memory we've created, and for all the wonderful ones yet to come. My love for you is a boundless sea that deepens with every shared glance.
+      </p>
+
+      <p class="signature-name">Suji</p>
+
+    </div>
+  </div>
+
+  <div id="quiz-section" class="content-section hidden">
+    <h2 class="section-title">The "How Well Do You Know Us?" Quiz</h2>
+    <p style="text-align: center; color: #880e4f; font-style: italic;">Answer each question to see a special reaction!</p>
+    <div id="quiz-container">
+    </div>
+    <button id="submit-quiz-btn" onclick="submitQuiz()" class="puzzle-btn hidden">Check Final Score</button>
+    <div id="quiz-result" class="result-box hidden"></div>
+  </div>
+
+  <div id="puzzle-section" class="content-section hidden">
+    <h2 class="section-title">Piece Together Our Love Story!</h2>
+    <p style="text-align: center;">Reassemble this special photo of us to unlock a final, funny surprise.</p>
+    <div id="puzzle-board">
+      <p class="puzzle-instructions">Click on a piece and then click on the piece you want to swap it with.</p>
+    </div>
+    <p class="puzzle-status">Moves: <span id="move-count">0</span></p>
+    <button onclick="startGame()" class="puzzle-btn">Start New Puzzle</button>
+    <div id="puzzle-result" class="result-box hidden"></div>
+
+    <div id="video-overlay" class="hidden">
+      <div class="video-box">
+        <h2 class="video-message">🎉Ye le tera Surprise</h2>
+
+        <video id="local-surprise-video" controls autoplay muted style="width: 100%; max-width: 560px; border-radius: 10px;">
+          <source src="./images/surprise_video.webm" type="video/webm">
+          <source src="./images/surprise_video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+
+        <button onclick="hideVideo()" class="puzzle-btn">Back to the Website</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+
+<div id="feedback-popup" class="hidden">
+  <div class="feedback-box">
+    <div id="feedback-sticker"></div>
+    <p id="feedback-message"></p>
+    <button onclick="hideFeedback()">Got It!</button>
+  </div>
+</div>
+
+</body>
+</html>

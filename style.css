@@ -1,0 +1,378 @@
+/* Import a beautiful script font for headlines and an elegant serif for body text */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* General Reset and Romantic Background */
+body {
+  margin: 0;
+  padding: 0;
+  /* Soft, gradient background from a light pink to ivory */
+  background: linear-gradient(135deg, #fce4ec 0%, #fffafa 100%);
+  font-family: 'Playfair Display', serif;
+
+  /* === FIX: Center everything on the screen === */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  min-height: 100vh;
+  width: 100%;
+
+  color: #444;
+}
+
+/* Screen and Container Styling (The 'Card' look) */
+.screen {
+  width: 90%;
+  max-width: 700px;
+  padding: 50px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(233, 30, 99, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+  transition: opacity 1s ease-in-out;
+  border: 3px solid #ffcdd2;
+
+  text-align: center;
+}
+
+.hidden {
+  display: none !important;
+  opacity: 0;
+}
+
+/* Lock Screen Styling */
+.lock-box {
+  /* FIX: Ensures internal elements are perfectly centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lock-box h1 {
+  font-family: 'Great Vibes', cursive;
+  color: #e91e63;
+  font-size: 3.5em;
+  margin-bottom: 20px;
+}
+.lock-box button {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 15px 35px;
+  border-radius: 25px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+  font-weight: 700;
+}
+.lock-box button:hover {
+  background-color: #c2185b;
+  transform: scale(1.05);
+}
+
+#passkey {
+  padding: 15px;
+  width: 70%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  border: 1px solid #ffab91;
+  border-radius: 10px;
+  font-size: 1.2em;
+  text-align: center;
+  background-color: #fffafa;
+}
+.error-text {
+  color: #d32f2f;
+  font-weight: bold;
+  height: 1.5em;
+  margin-top: 15px;
+}
+
+
+/* Navigation Menu Styles */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ffcdd2;
+}
+
+nav button {
+  background: none;
+  border: 2px solid #e91e63;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  font-family: 'Playfair Display', serif;
+  color: #e91e63;
+  cursor: pointer;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+nav button:hover {
+  background-color: #e91e63;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  font-family: 'Great Vibes', cursive;
+  color: #880e4f;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Letter Section Styling */
+.letter-page .title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
+  color: #e91e63;
+  text-align: center;
+  margin-bottom: 10px;
+}
+hr {
+  border: 0;
+  height: 30px;
+  /* HR made of repeating hearts */
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10"><path fill="%23ffab91" d="M 50 2 C 55 0, 60 4, 60 7 C 60 9, 55 10, 50 8 C 45 10, 40 9, 40 7 C 40 4, 45 0, 50 2 Z" transform="scale(0.3) translate(0, 10)"/><path fill="%23e91e63" d="M 50 2 C 55 0, 60 4, 60 7 C 60 9, 55 10, 50 8 C 45 10, 40 9, 40 7 C 40 4, 45 0, 50 2 Z" transform="scale(0.3) translate(100, 10)"/></svg>');
+  background-repeat: repeat-x;
+  background-size: 30px 30px;
+  margin: 20px auto;
+}
+.body-text {
+  font-size: 1.15em;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 25px;
+  text-indent: 40px;
+}
+.signature-text {
+  text-align: right;
+  margin-top: 40px;
+  color: #5d5d5d;
+  font-style: italic;
+}
+.signature-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2em;
+  font-weight: 700;
+  text-align: right;
+  color: #880e4f;
+  margin-top: 10px;
+}
+
+/* --- DYNAMIC PHOTO GALLERY STYLES --- */
+.photo-gallery-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  position: relative;
+  padding: 30px 10px;
+  background-color: #ffebee;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+.photo-trigger {
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #880e4f;
+  font-weight: bold;
+  text-align: center;
+  transition: color 0.3s;
+  display: block;
+  padding: 10px;
+}
+.photo-trigger:hover {
+  color: #e91e63;
+}
+#dynamic-photo-display {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 250px;
+  height: auto;
+  border: 5px solid #ffab91;
+  border-radius: 8px;
+  box-shadow: 0 8px 15px rgba(136, 14, 79, 0.5);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+}
+.visible-photo {
+  opacity: 1 !important;
+}
+.hidden-photo {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* --- Quiz Styles --- */
+.question-item {
+  border-left: 5px solid #ffab91;
+  background-color: #fffaf0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  padding-top: 20px;
+}
+.question-item label:hover {
+  background-color: #ffebee;
+  border-radius: 5px;
+}
+.puzzle-btn {
+  background-color: #ffab91;
+  color: #880e4f;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: bold;
+}
+.puzzle-btn:hover {
+  background-color: #e91e63;
+  color: white;
+  transform: scale(1.02);
+}
+
+/* --- Quiz Feedback Pop-up Styles --- */
+#feedback-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5000;
+  backdrop-filter: blur(3px);
+}
+.feedback-box {
+  background: linear-gradient(145deg, #fff 0%, #ffebee 100%);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(233, 30, 99, 0.4);
+  width: 80%;
+  max-width: 350px;
+  transform: scale(0.8);
+  transition: transform 0.3s ease-out;
+  border: 3px solid #e91e63;
+}
+#feedback-popup.visible .feedback-box {
+  transform: scale(1);
+}
+#feedback-sticker {
+  font-size: 4em;
+  margin-bottom: 10px;
+  animation: bounce 0.5s ease-out;
+}
+#feedback-message {
+  font-size: 1.3em;
+  color: #880e4f;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+#feedback-popup button {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1em;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+/* Styling for the custom photo in the pop-up */
+.feedback-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #e91e63;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Photo Puzzle Styles --- */
+#puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin: 20px auto;
+  width: 310px;
+  border: 4px solid #e91e63;
+  background-color: #f8bbd0;
+  box-shadow: 0 0 15px rgba(233, 30, 99, 0.5);
+}
+.puzzle-tile {
+  background-size: 300px 300px;
+  cursor: pointer;
+  border: 2px solid #ffcdd2;
+  transition: box-shadow 0.1s;
+}
+.puzzle-tile.selected {
+  box-shadow: 0 0 0 5px #c2185b;
+  animation: pulse 1s infinite alternate;
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.02); }
+}
+.puzzle-instructions {
+  font-style: italic;
+  color: #880e4f;
+  grid-column: 1 / 4;
+}
+
+/* === Video Overlay Styles === */
+#video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  flex-direction: column;
+}
+#video-overlay.visible {
+  opacity: 1;
+  display: flex !important; /* Fix to ensure visibility */
+}
+.video-box {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 40px rgba(255, 171, 145, 0.8);
+  transform: scale(0.9);
+  transition: transform 0.3s;
+}
+.video-message {
+  font-family: 'Great Vibes', cursive;
+  color: #e91e63;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+.video-box iframe {
+  max-width: 90vw;
+  max-height: 80vh;
+  border: 5px solid #ffab91;
+  border-radius: 10px;
+}
